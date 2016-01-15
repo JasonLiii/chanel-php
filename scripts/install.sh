@@ -86,7 +86,7 @@ server {
     listen 80;
     listen 8080;
 
-    root /home/vagrant/chanel-company/public;
+    root /home/vagrant/chanel-company/chanel-company/public;
     index index.php index.html index.htm;
 
     server_name $CHANEL_COMPANY;
@@ -122,7 +122,7 @@ server {
     listen 80;
     listen 8081;
 
-    root /home/vagrant/chanel-agent/public;
+    root /home/vagrant/chanel-agent/chanel-agent/public;
     index index.php index.html index.htm;
 
     server_name $CHANEL_AGENT;
@@ -158,7 +158,7 @@ server {
     listen 80;
     listen 8082;
 
-    root /home/vagrant/chanel-member/public;
+    root /home/vagrant/chanel-member/chanel-member/public;
     index index.php index.html index.htm;
 
     server_name $CHANEL_MEMBER;
