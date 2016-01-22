@@ -7,8 +7,9 @@ RUN apt-get update -y && apt-get install -y vim curl git php5-mcrypt php5-memcac
 RUN rm /etc/php5/fpm/conf.d/20-mcrypt.ini /etc/php5/cli/conf.d/20-mcrypt.ini && php5enmod mcrypt
 #RUN cd /etc/php5/fpm/conf.d && ln -s /etc/php5/mods-available/mcrypt.ini 20-mcrypt.ini
 
-# Install Composer
+# Install Composer and tools
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+RUN curl -L -O https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar; chmod +x apigen.phar; mv apigen.phar /usr/local/bin/apigen
 
 # Initial
 ENV WEB_DOCUMENT_ROOT  /application/code/public/
