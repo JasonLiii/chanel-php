@@ -22,3 +22,6 @@ COPY ./chanel-agent/codeception.yml ./codeception.yml
 # copy php.ini
 COPY ./conf/php.ini /etc/php5/fpm/php.ini
 COPY ./conf/vhost.conf /opt/docker/etc/nginx/vhost.conf
+
+# generate developer files
+RUN apigen generate -s ./application/services -s ./application/dtos -s ./application/models -d ./public/docs/api

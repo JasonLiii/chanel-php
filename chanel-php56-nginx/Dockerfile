@@ -1,7 +1,7 @@
 FROM webdevops/php-nginx:debian-8
 
 # Install require extension
-RUN apt-get update -y && apt-get install -y vim curl git php5-mcrypt php5-memcached php5-mongo php5-mysqlnd php5-redis php5-xdebug && apt-get clean
+RUN apt-get update -y && apt-get install -y vim curl git libbz2-dev php5-mcrypt php5-memcached php5-mongo php5-mysqlnd php5-redis php5-xdebug && apt-get clean
 
 # Enable mod
 RUN rm /etc/php5/fpm/conf.d/20-mcrypt.ini /etc/php5/cli/conf.d/20-mcrypt.ini && php5enmod mcrypt
@@ -10,6 +10,7 @@ RUN rm /etc/php5/fpm/conf.d/20-mcrypt.ini /etc/php5/cli/conf.d/20-mcrypt.ini && 
 # Install Composer and tools
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 RUN curl -L -O https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar; chmod +x apigen.phar; mv apigen.phar /usr/local/bin/apigen
+RUN curl -L -O http://static.phpmd.org/php/latest/phpmd.phar; chmod +x phpmd.phar; mv phpmd.phar /usr/local/bin/phpmd
 
 # Initial
 ENV WEB_DOCUMENT_ROOT  /application/code/public/

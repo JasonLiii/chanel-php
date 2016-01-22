@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
-IMAGE := chanel-agent
 REGISTRY_SERVER := docker-repo.ifalo.com.tw
+IMAGE := $(shell basename $(shell pwd))
 VERSION := master
 
 .PHONY: all build rebuild push checkout
@@ -12,13 +12,12 @@ VERSION := master
 all: build push
 
 build: checkout
-	docker build -t=$(IMAGE):$(VERSION) .
+	docker build -t=$(REGISTRY_SERVER)/$(IMAGE):$(VERSION) .
 
 rebuild: checkout
-	docker build -t=$(IMAGE):$(VERSION) --no-cache .
+	docker build -t=$(REGISTRY_SERVER)/$(IMAGE):$(VERSION) --no-cache .
 
 push:
-	docker tag -f $(IMAGE):$(VERSION) $(REGISTRY_SERVER)/$(IMAGE):$(VERSION)
 	docker push $(REGISTRY_SERVER)/$(IMAGE):$(VERSION)
 
 checkout: chanel-agent

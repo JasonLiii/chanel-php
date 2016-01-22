@@ -1,16 +1,16 @@
 #!/usr/bin/make -f
 REGISTRY_SERVER := docker-repo.ifalo.com.tw
-IMAGE := chanel-php56-apache-base
+IMAGE := $(shell basename $(shell pwd))
 VERSION := latest
 
-.PHONY: image push
+.PHONY: all build push
 
 # ------------------------------------------------------------------------------
 
-image:
-	docker build -t=$(IMAGE):$(VERSION) .
+all: build push
+
+build:
+	docker build -t=$(REGISTRY_SERVER)/$(IMAGE):$(VERSION) .
 
 push:
-	docker tag -f $(IMAGE):$(VERSION) $(REGISTRY_SERVER)/$(IMAGE):$(VERSION)
 	docker push $(REGISTRY_SERVER)/$(IMAGE):$(VERSION)
-	docker rmi $(REGISTRY_SERVER)/$(IMAGE):$(VERSION)
