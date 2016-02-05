@@ -1,0 +1,103 @@
+route:
+  image: nginx
+  ports:
+  - 80:80
+  links:
+  - company
+  - agent
+  - member
+  - phpmyadmin
+  - rockmongo
+  - phpmemcachedadmin
+  - phpredmin
+  volumes:
+  - /etc/localtime:/etc/localtime
+  - ./conf/nginx.route.conf:/etc/nginx/conf.d/default.conf
+
+company:
+  image: docker-repo.ifalo.com.tw/chanel-company
+  links:
+  - mysql
+  - redis
+  - mongo
+  - memcached1
+  - memcached2
+  - memcached3
+  volumes:
+  - /etc/localtime:/etc/localtime
+  environment:
+    APPLICATION_ENV: docker
+
+agent:
+  image: docker-repo.ifalo.com.tw/chanel-agent
+  links:
+  - mysql
+  - redis
+  - mongo
+  - memcached1
+  - memcached2
+  - memcached3
+  volumes:
+  - /etc/localtime:/etc/localtime
+  environment:
+    APPLICATION_ENV: docker
+
+member:
+  image: docker-repo.ifalo.com.tw/chanel-member
+  links:
+  - mysql
+  - redis
+  - mongo
+  - memcached1
+  - memcached2
+  - memcached3
+  volumes:
+  - /etc/localtime:/etc/localtime
+  environment:
+    APPLICATION_ENV: docker
+
+mysql:
+  image: mariadb:10
+  volumes:
+  - /etc/localtime:/etc/localtime
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: default
+
+redis:
+  image: redis:2.8
+
+mongo:
+  image: mongo:2.6
+  command: ["mongod", "--smallfiles"]
+
+memcached1:
+  image: memcached:1.4
+
+memcached2:
+  image: memcached:1.4
+
+memcached3:
+  image: memcached:1.4
+
+phpmyadmin:
+  image: docker-repo.ifalo.com.tw/phpmyadmin
+  links:
+  - mysql
+
+rockmongo:
+  image: docker-repo.ifalo.com.tw/rockmongo
+  links:
+  - mongo
+
+phpmemcachedadmin:
+  image: docker-repo.ifalo.com.tw/phpmemcachedadmin
+  links:
+  - memcached1
+  - memcached2
+  - memcached3
+
+phpredmin:
+  image: docker-repo.ifalo.com.tw/phpredisadmin
+  links:
+  - redis
