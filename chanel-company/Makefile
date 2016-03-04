@@ -21,7 +21,7 @@ push:
 	docker push $(REGISTRY_SERVER)/$(IMAGE):$(VERSION)
 
 checkout: chanel-company
-	cd chanel-company; git fetch; git checkout $(VERSION); git reset origin/$(VERSION) --hard
+	cd chanel-company; git fetch -p; git checkout $(VERSION); git reset origin/$(VERSION) --hard
 	cd chanel-company; git submodule update --init
 
 chanel-company:

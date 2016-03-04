@@ -14,4 +14,4 @@ RUN pecl install mongo redis memcached && \
     echo "extension=memcached.so" > /usr/local/etc/php/conf.d/memcached.ini
 
 # Token owner is Miles
-RUN composer config -g github-oauth.github.com a7a0f5738bc42ebe5c1dc749277033901fe4a861
+RUN composer config -g github-oauth.github.com 18707af095f11b171a2fe46702ecdb495af8fc8c
