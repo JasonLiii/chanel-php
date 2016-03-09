@@ -33,7 +33,7 @@ CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 # Install require extension
 RUN apt-get update -y && apt-get install -y libmcrypt-dev libbz2-dev zlib1g-dev git && apt-get clean && rm -r /var/lib/apt/lists/*
-RUN docker-php-ext-install bz2 mbstring mcrypt mysqli pdo_mysql zip
+RUN docker-php-ext-install bcmath bz2 mbstring mcrypt mysqli pdo_mysql zip
 
 # Install Composer and tools
 RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
