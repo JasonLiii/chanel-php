@@ -109,8 +109,6 @@ server {
 
         # for Zend Framework
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
-        # use dot file
-        # fastcgi_param APPLICATION_ENV development;
     }
 
     location ~ /\.ht {
@@ -145,8 +143,6 @@ server {
 
         # for Zend Framework
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
-        # use dot file
-        # fastcgi_param APPLICATION_ENV vagrant;
     }
 
     location ~ /\.ht {
@@ -181,8 +177,6 @@ server {
 
         # for Zend Framework
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
-        # use dot file
-        # fastcgi_param APPLICATION_ENV vagrant;
     }
 
     location ~ /\.ht {
@@ -245,6 +239,7 @@ if [ ! -e $IS_INSTALLED ];then
     sed -i 's/^;listen.owner =/listen.owner =/g' /etc/php5/fpm/pool.d/www.conf
     sed -i 's/^;listen.group =/listen.group =/g' /etc/php5/fpm/pool.d/www.conf
     sed -i 's/^;listen.mode =/listen.mode =/g' /etc/php5/fpm/pool.d/www.conf
+    sed -i 's/^;clear_env =/clear_env =/g' /etc/php5/fpm/pool.d/www.conf
 
     # modified php.ini
     sed -i "s/^;date.timezone =.*/date.timezone = $TIMEZONE/g" /etc/php5/fpm/php.ini
