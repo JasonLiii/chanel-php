@@ -247,6 +247,7 @@ if [ ! -e $IS_INSTALLED ];then
     # install composer
     curl -sS https://getcomposer.org/installer | php
     mv composer.phar /usr/local/bin/composer
+    composer config -g github-oauth.github.com 18707af095f11b171a2fe46702ecdb495af8fc8c
 
     # enable PHP module
     php5enmod mcrypt
