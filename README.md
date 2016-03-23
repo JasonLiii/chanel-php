@@ -40,15 +40,24 @@ Clone 三端口程式
 ```bash
 cd /path/to/project/chanel-company
 make checkout
-cd chanel-company; composer install
 
 cd /path/to/project/chanel-agent
 make checkout
-cd chanel-agent; composer install
 
 cd /path/to/project/chanel-member
 make checkout
-cd chanel-member; composer install
+```
+
+安裝 Composer 套件
+
+```bash
+# 如果沒有安裝 composer 的話，可以進 vagrant 下 composer 指令
+vagrant ssh
+
+# 到三端口安裝相依套件
+cd ~/chanel-company/chanel-company; composer install
+cd ~/chanel-agent/chanel-agent; composer install
+cd ~/chanel-member/chanel-member; composer install
 ```
 
 編輯 `/etc/hosts` 檔，新增下列三行
