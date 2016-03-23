@@ -126,9 +126,18 @@ php chanel db:reset -f
 
 # 實際的 Build Docker Image 動作如下
 
+在開始要 Build 三端口 image 之前，需要先 build base
+
+```
+cd /vagrant/chanel-php56-nginx
+make build
+```
+
+再來就可以 build 三端口的 image
+
 > 以下以 Build member端口為例
 
 ```
 cd /vagrant/chanel-member
-make VERSION=[branch-name]
+make build VERSION=[branch-name]
 ```
