@@ -6,6 +6,9 @@ Requirement
 
 1. [VirtualBox](https://www.virtualbox.org/)
 2. [Vagrant](https://www.vagrantup.com/)
+3. [Composer](https://getcomposer.org/)
+
+> Composer 進 Vagrant 也可使用
 
 Installation
 ------------
@@ -37,10 +40,13 @@ Clone 三端口
 ```bash
 cd /path/to/project/chanel-company
 make checkout
+cd chanel-company; composer install
 cd /path/to/project/chanel-agent
 make checkout
+cd chanel-agent; composer install
 cd /path/to/project/chanel-member
 make checkout
+cd chanel-member; composer install
 ```
 
 編輯 `/etc/hosts` 檔，新增下列三行
