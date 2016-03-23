@@ -32,6 +32,17 @@ cd /vagrant/scripts
 sh -x docker.sh
 ```
 
+Clone 三端口
+
+```bash
+cd /path/to/project/chanel-company
+make checkout
+cd /path/to/project/chanel-agent
+make checkout
+cd /path/to/project/chanel-member
+make checkout
+```
+
 編輯 `/etc/hosts` 檔，新增下列三行
 
 ```
