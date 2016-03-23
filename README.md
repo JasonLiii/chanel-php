@@ -35,15 +35,17 @@ cd /vagrant/scripts
 sh -x docker.sh
 ```
 
-Clone 三端口
+Clone 三端口程式
 
 ```bash
 cd /path/to/project/chanel-company
 make checkout
 cd chanel-company; composer install
+
 cd /path/to/project/chanel-agent
 make checkout
 cd chanel-agent; composer install
+
 cd /path/to/project/chanel-member
 make checkout
 cd chanel-member; composer install
