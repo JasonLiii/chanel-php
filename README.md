@@ -13,7 +13,7 @@ Requirement
 Installation
 ------------
 
-初始化虛擬機
+Clone 本專案(`/path/to/project`)，然後初始化虛擬機
 
 ```bash
 cd /path/to/project
