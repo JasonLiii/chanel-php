@@ -32,7 +32,7 @@ cd /vagrant/scripts
 sh -x docker.sh
 ```
 
-編輯 `/etc/hosts` 檔
+編輯 `/etc/hosts` 檔，新增下列三行
 
 ```
 10.10.10.10 chanel.biz
