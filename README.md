@@ -40,6 +40,12 @@ sh -x docker.sh
 10.10.10.10 chanel.net
 ```
 
+網址與工作目錄對應如下：
+
+- `chanel.biz` 對應 `chanel-company/chanel-company/`
+- `chanel.us` 對應 `chanel-agent/chanel-agent/`
+- `chanel.net` 對應 `chanel-member/chanel-member/`
+
 # 實際的build動作如下
 
 > 以下以build member端口為例
