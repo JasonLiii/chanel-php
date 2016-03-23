@@ -65,9 +65,66 @@ cd chanel-member; composer install
 - `chanel.us` 對應 `chanel-agent/chanel-agent/`
 - `chanel.net` 對應 `chanel-member/chanel-member/`
 
-# 實際的build動作如下
+編輯 `.env` 檔，可參考 `.env.example` 檔，範例如下：
 
-> 以下以build member端口為例
+```ini
+# Zend Framework 全域環境設定
+APPLICATION_ENV=development
+
+# DEBUG Mode
+APPLICATION_DEBUG = 1
+
+# 彩球盤口預設Ｂ盤的 id (see lottery_handicap Table)
+LOTTERY_B_HANDICAP_ID = 2
+
+# MySQL config
+APPLICATION_MYSQL_HOST = 10.10.10.10
+APPLICATION_MYSQL_PORT = 3306
+APPLICATION_MYSQL_USER = root
+APPLICATION_MYSQL_PASS = password
+APPLICATION_MYSQL_DB_NAME = default
+
+# Mongo config
+APPLICATION_MONGO_HOST = 10.10.10.10
+APPLICATION_MONGO_PORT = 27017
+
+# Redis config
+APPLICATION_REDIS_HOST = 10.10.10.10
+APPLICATION_REDIS_PORT = 6379
+APPLICATION_REDIS_PASS = password
+
+# Casino Redis config
+APPLICATION_CASINO_REDIS_HOST = 10.10.10.10
+APPLICATION_CASINO_REDIS_PORT = 6379
+APPLICATION_CASINO_REDIS_PASS = password
+
+# Memcached configs
+APPLICATION_MEMCACHED_HOSTS = 10.10.10.10,10.10.10.10,10.10.10.10
+APPLICATION_MEMCACHED_PORTS = 11211,11211,11211
+
+# Logger 設定
+APPLICATION_LOGGER_ENABLE = 0
+APPLICATION_LOGGER_SLACK_TOKEN =
+APPLICATION_LOGGER_SLACK_CHANNEL =
+APPLICATION_LOGGER_RAVEN_DSN =
+APPLICATION_LOGGER_RAVEN_USER =
+
+########### Console 專用 ###########
+
+# 使用 create:admin / create:line 預設會新增的管理員和整線會員，用逗號分隔
+# ADMINS=
+```
+
+初始化 DB
+
+```
+cd /path/to/project/chanel-company
+php chanel db:reset -f
+```
+
+# 實際的 Build Docker Image 動作如下
+
+> 以下以 Build member端口為例
 
 ```
 cd /vagrant/chanel-member
