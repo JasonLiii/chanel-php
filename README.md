@@ -122,6 +122,8 @@ cd /path/to/project/chanel-company
 php chanel db:reset -f
 ```
 
+預設管理帳號 admin / password
+
 # 實際的 Build Docker Image 動作如下
 
 > 以下以 Build member端口為例
