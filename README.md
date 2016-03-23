@@ -129,6 +129,9 @@ php chanel db:reset -f
 在開始要 Build 三端口 image 之前，需要先 build base
 
 ```
+vagrant ssh
+sudo -i
+
 cd /vagrant/chanel-php56-nginx
 make build
 ```
@@ -138,6 +141,9 @@ make build
 > 以下以 Build member端口為例
 
 ```
+vagrant ssh
+sudo -i
+
 cd /vagrant/chanel-member
 make build VERSION=[branch-name]
 ```
