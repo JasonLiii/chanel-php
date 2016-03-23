@@ -1,6 +1,15 @@
 chanel-php
 ==========
 
+Requirement
+-----------
+
+1. [VirtualBox](https://www.virtualbox.org/)
+2. [Vagrant](https://www.vagrantup.com/)
+
+Installation
+------------
+
 第一次使用的話：
 
 ```
