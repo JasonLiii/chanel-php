@@ -65,7 +65,7 @@ cd chanel-member; composer install
 - `chanel.us` 對應 `chanel-agent/chanel-agent/`
 - `chanel.net` 對應 `chanel-member/chanel-member/`
 
-編輯 `.env` 檔，可參考 `.env.example` 檔，範例如下：
+編輯三端口 `.env` 檔，可參考 `.env.example` 檔，本機執行的範例如下：
 
 ```ini
 # Zend Framework 全域環境設定
