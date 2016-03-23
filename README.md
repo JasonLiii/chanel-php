@@ -6,7 +6,7 @@ Requirement
 
 1. [VirtualBox](https://www.virtualbox.org/)
 2. [Vagrant](https://www.vagrantup.com/)
-3. [Composer](https://getcomposer.org/)
+3. [Composer](https://getcomposer.org/) (Optional)
 
 > Composer 進 Vagrant 也可使用
 
@@ -117,18 +117,19 @@ APPLICATION_LOGGER_RAVEN_USER =
 
 初始化 DB
 
-```
+```bash
 cd /path/to/project/chanel-company
 php chanel db:reset -f
 ```
 
 預設管理帳號 admin / password
 
-# 實際的 Build Docker Image 動作如下
+Docker Image (Optional)
+-----------------------
 
 在開始要 Build 三端口 image 之前，需要先 build base
 
-```
+```bash
 vagrant ssh
 sudo -i
 
@@ -140,7 +141,7 @@ make build
 
 > 以下以 Build member端口為例
 
-```
+```bash
 vagrant ssh
 sudo -i
 
