@@ -127,7 +127,10 @@ APPLICATION_LOGGER_RAVEN_USER =
 初始化 DB
 
 ```bash
-cd /path/to/project/chanel-company
+# 如果其他環境執行遇到錯誤時，可以進 vagrant 執行
+vagrant ssh
+
+cd /path/to/project/chanel-company/chanel-company
 php chanel db:reset -f
 ```
 
