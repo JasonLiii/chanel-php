@@ -11,3 +11,6 @@ RUN composer install --optimize-autoloader
 COPY ./chanel-member/application ./application
 COPY ./chanel-member/public ./public
 COPY ./chanel-member/chanel .
+
+# open app-teach r w
+RUN chmod -R 777 ./public/images/app-teach
