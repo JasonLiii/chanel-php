@@ -46,5 +46,13 @@ RUN pecl install mongo redis memcached && \
     echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini && \
     echo "extension=memcached.so" > /usr/local/etc/php/conf.d/memcached.ini
 
+#Install gd
+RUN apt-get update && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng12-dev \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd
+
 # Token owner is Miles
 RUN composer config -g github-oauth.github.com 18707af095f11b171a2fe46702ecdb495af8fc8c
