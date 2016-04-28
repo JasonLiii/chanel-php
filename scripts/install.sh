@@ -40,6 +40,7 @@ php5-memcached
 php5-mongo
 php5-mysqlnd
 php5-redis
+php5-gd
 php5-xdebug
 redis-server
 vim
