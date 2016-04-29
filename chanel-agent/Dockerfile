@@ -5,7 +5,7 @@ MAINTAINER Miles <miles@ifalo.com.tw>
 COPY ./chanel-agent/composer.json .
 COPY ./chanel-agent/composer.lock .
 COPY ./chanel-agent/.env.example .
-RUN composer install --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader
 
 # Copy production code
 COPY ./chanel-agent/application ./application

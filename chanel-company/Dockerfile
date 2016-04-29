@@ -5,7 +5,7 @@ MAINTAINER Miles <miles@ifalo.com.tw>
 COPY ./chanel-company/composer.json .
 COPY ./chanel-company/composer.lock .
 COPY ./chanel-company/.env.example .
-RUN composer install --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader
 
 # Copy production code
 COPY ./chanel-company/application ./application

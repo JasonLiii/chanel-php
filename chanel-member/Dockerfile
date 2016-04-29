@@ -5,9 +5,10 @@ MAINTAINER Miles <miles@ifalo.com.tw>
 COPY ./chanel-member/composer.json .
 COPY ./chanel-member/composer.lock .
 COPY ./chanel-member/.env.example .
-RUN composer install --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader
 
 # Copy production code
 COPY ./chanel-member/application ./application
+COPY ./chanel-member/bin ./bin
 COPY ./chanel-member/public ./public
 COPY ./chanel-member/chanel .

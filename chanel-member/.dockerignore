@@ -1,0 +1,47 @@
+# Git
+chanel-company/.git
+
+# Dockerfile
+.dockerignore
+Dockerfile
+
+# F2E asserts
+chanel-company/asserts
+
+# Composer files
+chanel-company/vendor
+chanel-company/composer.phar
+
+# Node files
+chanel-company/node_modules
+chanel-company/npm-debug.log
+
+# Global/Temp.gitignore
+*~
+*.swp
+
+# Global/OSX.gitignore
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Global/Windows.gitignore
+Thumbs.db
+Desktop.ini
+
+# NetBeans project files
+chanel-company/nbproject/*
+
+# IntelliJ IDEA project files
+chanel-company/.idea
+chanel-company/*.iml
+
+# Eclipse/Aptana/Zend Studio project files
+.project
+.buildpath
+.settings
