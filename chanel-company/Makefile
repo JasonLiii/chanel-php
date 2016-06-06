@@ -25,4 +25,4 @@ checkout: chanel-company
 	cd chanel-company; git submodule update --init
 
 chanel-company:
-	git clone git@gitlab.ifalo.com.tw:web/chanel-company.git
+	git clone git@github.com:ifaloteam/chanel-company.git

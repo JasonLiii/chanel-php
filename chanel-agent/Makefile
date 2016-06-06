@@ -25,4 +25,4 @@ checkout: chanel-agent
 	cd chanel-agent; git submodule update --init
 
 chanel-agent:
-	git clone git@gitlab.ifalo.com.tw:web/chanel-agent.git
+	git clone git@github.com:ifaloteam/chanel-agent.git

@@ -25,4 +25,4 @@ checkout: chanel-member
 	cd chanel-member; git submodule update --init
 
 chanel-member:
-	git clone git@gitlab.ifalo.com.tw:web/chanel-member.git
+	git clone git@github.com:ifaloteam//chanel-member.git
